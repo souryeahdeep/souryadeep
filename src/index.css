@@ -1,0 +1,36 @@
+@import url(https://fonts.bunny.net/css?family=aclonica:400|andada-pro:600|b612-mono:400);
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Liter&display=swap');
+body {
+  font-family: 'Aclonica', sans-serif;
+  
+}
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: #00000000;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 1px;
+  background: #f1f1f100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff00;
+}
+.liter-regular {
+  font-family: "Liter", sans-serif;
+font-weight: 600;
+}
+.jacques-francois-regular {
+  font-family: "Jacques Francois", serif;
+  font-weight: 400;
+  font-style: normal;
+}
