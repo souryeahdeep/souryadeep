@@ -50,8 +50,7 @@ export default function HeroSec() {
               duration={1.5}
               className=""
             >
-              The WebApp Developer of Your Dreams
-            </TextAnimate>
+              Your friendly distant Java Developer            </TextAnimate>
             <TextAnimate by="text" delay={0.6} duration={1.5}>
              <img src={sleep} alt="sleeping emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />
               <img src={shocked} alt="shocked emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />

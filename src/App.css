@@ -150,3 +150,10 @@
     @apply bg-background text-foreground;
     }
 }
+
+/* Custom gradient for radial effect */
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+}
