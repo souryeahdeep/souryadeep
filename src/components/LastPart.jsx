@@ -7,11 +7,11 @@ export default function EducationContact() {
       <div className="max-w-4xl w-full space-y-20">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Education huh?
+            Education Background
           </h2>
           <p className="text-2xl md:text-2xl leading-relaxed">
             Did a BTech in Computer Science and Technology and passed with X.XX
-            CGPA (very useful)
+            CGPA (haven't passed yet, currently in 2nd Year)
           </p>
         </div>
 

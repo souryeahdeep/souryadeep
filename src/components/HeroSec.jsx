@@ -6,8 +6,16 @@ import loved from "/loved.png";
 import shocked from "/shocked.png";
 import sleep from "/sleep.png";
 import thinking from "/thinking.png";
+import { FlipWords } from "../components/ui/flip-words";
 
 export default function HeroSec() {
+  const words = [
+    "Your friendly distant Java Developer",
+    "Currently learning Docker",
+    "Peeking into Codebases",
+    "Ask me about Spring, Microservices!",
+  ];
+
   return (
     <section
       id="home"
@@ -44,18 +52,32 @@ export default function HeroSec() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <TextAnimate
-              by="word"
-              delay={0.6}
-              duration={1.5}
-              className=""
-            >
-              Your friendly distant Java Developer            </TextAnimate>
+            <FlipWords words={words} duration={3000} className="text-white" />
             <TextAnimate by="text" delay={0.6} duration={1.5}>
-             <img src={sleep} alt="sleeping emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />
-              <img src={shocked} alt="shocked emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />
-              <img src={thinking} alt="thinking emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />
-              <img src={loved} alt="loved emoji" className="inline-block w-6 h-6 ml-2 align-middle" aria-hidden="true" />
+              <img
+                src={sleep}
+                alt="sleeping emoji"
+                className="inline-block w-6 h-6 ml-2 align-middle"
+                aria-hidden="true"
+              />
+              <img
+                src={shocked}
+                alt="shocked emoji"
+                className="inline-block w-6 h-6 ml-2 align-middle"
+                aria-hidden="true"
+              />
+              <img
+                src={thinking}
+                alt="thinking emoji"
+                className="inline-block w-6 h-6 ml-2 align-middle"
+                aria-hidden="true"
+              />
+              <img
+                src={loved}
+                alt="loved emoji"
+                className="inline-block w-6 h-6 ml-2 align-middle"
+                aria-hidden="true"
+              />
             </TextAnimate>
           </motion.p>
         </motion.div>

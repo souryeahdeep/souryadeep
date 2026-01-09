@@ -7,15 +7,23 @@ export default function Experience() {
       title: "Frontend Developement Intern",
       subtitle: "Vitamin G Studios | Oct, '25 - Dec, '25",
       description: "Led development of scalable web applications using React, Node.js, and cloud technologies. Improved performance by 40% and mentored junior developers."
-    },
-    
+    }
   ];
+
+  // Show fallback text if there are no experiences to display
+  if (!experiences.length) {
+    return (
+      <section id="experience" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+        <div className="text-2xl font-bold text-center">Oops No Experience till now</div>
+      </section>
+    );
+  }
 
   return (
     <section id="experience" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
       <div className="max-w-6xl w-full">
         <h1 className="text-4xl md:text-4xl font-bold mb-16 text-center">
-          Looking for my Experiences I suppose?
+          Looking for my Experiences?
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -7,12 +7,13 @@ import EducationContact from './components/LastPart'
 import Projects from './components/Projects'
 import SkillsShowcase from './components/Skill'
 import FloatingNavbar from './components/Navbar'
-import {LightRays} from './components/ui/light-rays'
-import { SmoothCursor } from "./components/ui/smooth-cursor"
+import { ScrollProgress } from './components/ui/scroll-progress'
+
 function App() {
 
   return (
     <main className="w-full overflow-x-hidden relative">
+      <ScrollProgress className="h-1" />
       {/* Gradient Background with Pattern */}
       <div className="fixed inset-0 z-0">
         {/* Main Gradient */}
