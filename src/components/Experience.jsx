@@ -58,7 +58,7 @@ export default function Experience() {
           {" "}
           <h1 className="text-2xl text-red-100">
             Give me somesunshine, and some{" "}
-            <span className="cursor-pointer font-serif text-4xl text-red-800">Experience</span>
+            <span className="cursor-pointer font-serif text-4xl text-red-800 glow-text">Experience</span>
           </h1>
         </Tooltip>{" "}
         {/* // Experience Cards */}

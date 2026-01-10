@@ -17,12 +17,12 @@ export default function EducationContact() {
       id="contact"
       className="min-h-screen bg-black text-white flex items-center justify-center p-8"
     >
-      <div className="max-w-4xl w-full space-y-20">
+      <div className="max-w-4xl w-full space-y-10">
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Education Background
           </h2>
-          <p className="text-2xl md:text-2xl leading-relaxed">
+          <p className="text-xl  md:text-2xl leading-relaxed">
             Pursuing B.Tech in Computer Science and Technology from JIS College
             of Engineering.{" "}
             <Tooltip
@@ -30,7 +30,7 @@ export default function EducationContact() {
               content={<TooltipCard />}
             >
               {" "}
-              <span className="cursor-pointer font-serif text-4xl text-red-800">
+              <span className="cursor-pointer font-serif text-4xl text-red-800 glow-text">
                 Expecting
               </span>
             </Tooltip>{" "}
@@ -39,14 +39,14 @@ export default function EducationContact() {
         </div>
 
         <div>
-          <h2 className="text-5xl md:text-4xl font-bold mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Feel free to talk{" "}
             <span className="text-xl font-extralight font-serif">
               {" "}
               (coz i'm available 19*7)
             </span>
           </h2>
-          <div className="flex flex-wrap gap-8 text-2xl md:text-2xl font-bold">
+          <div className="flex flex-wrap gap-8 text-lg md:text-2xl font-bold">
             <a
               href="https://www.linkedin.com/in/souryadeep-ganguly-b46054240/"
               className="hover:text-blue-500 transition-normal duration-400"

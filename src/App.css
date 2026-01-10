@@ -156,4 +156,19 @@
   .bg-gradient-radial {
     background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
   }
+  .glow-text {
+    text-shadow: 0 0 8px rgba(255, 64, 64, 0.65), 0 0 16px rgba(255, 64, 64, 0.45);
+    animation: glow-pulse 1.6s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    filter: brightness(0.9);
+    text-shadow: 0 0 4px rgba(255, 64, 64, 0.4), 0 0 10px rgba(255, 64, 64, 0.3);
+  }
+  100% {
+    filter: brightness(1.15);
+    text-shadow: 0 0 10px rgba(255, 64, 64, 0.9), 0 0 24px rgba(255, 64, 64, 0.6);
+  }
 }
