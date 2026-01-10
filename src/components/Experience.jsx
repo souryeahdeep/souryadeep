@@ -1,52 +1,113 @@
-import vitaminGImage from '/vitaminmain.png';
+import { motion } from "motion/react";
+import { ContainerScroll } from "./ui/container-scroll-animation";
+import vitaminGImage from "/vitaminmain.png";
+import { BackgroundGradient } from "./ui/background-gradient";
+import { Tooltip } from "./ui/tooltip-card";
 export default function Experience() {
   const experiences = [
     {
       id: 1,
       image: vitaminGImage,
-      title: "Frontend Developement Intern",
-      subtitle: "Vitamin G Studios | Oct, '25 - Dec, '25",
-      description: "Led development of scalable web applications using React, Node.js, and cloud technologies. Improved performance by 40% and mentored junior developers."
-    }
+      title: "Frontend Development Intern",
+      subtitle: "Vitamin G Studios · Oct '25 - Dec '25",
+      description:
+        "Worked on a landing page of the Project Named HiveMind using React.js and Tailwind CSS, ensuring a responsive and engaging user experience.",
+      link: "https://www.tacticalhive.live/hiveeyes",
+    },
   ];
 
   // Show fallback text if there are no experiences to display
   if (!experiences.length) {
     return (
-      <section id="experience" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
-        <div className="text-2xl font-bold text-center">Oops No Experience till now</div>
+      <section
+        id="experience"
+        className="min-h-screen bg-black text-white flex items-center justify-center p-8"
+      >
+        <div className="text-2xl font-bold text-center">
+          Oops No Experience till now
+        </div>
       </section>
     );
   }
-
-  return (
-    <section id="experience" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
-      <div className="max-w-6xl w-full">
-        <h1 className="text-4xl md:text-4xl font-bold mb-16 text-center">
-          Looking for my Experiences?
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {experiences.map((exp) => (
-            <div key={exp.id} className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="h-48 p-[25px] bg-gray-100 flex items-center justify-center">
-                <img
-                  src={exp.image}
-                  alt={exp.title}
-                  className="w-full h-full "
-                  onError={(e) => {
-                    e.target.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNDQ0Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZTwvdGV4dD48L3N2Zz4=";
-                  }}
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold mb-2 text-white">{exp.title}</h3>
-                <h4 className="text-sm text-gray-400 mb-3">{exp.subtitle}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">{exp.description}</p>
-              </div>
-            </div>
-          ))}
+  const TooltipCard = () => {
+    return (
+      <div className="">
+        <img
+          src="https://media.tenor.com/rOoqECIVI4kAAAAi/stop-this-madness-blue-emoji.gif"
+          alt="Tyler Durden"
+          className="aspect-auto  w-full rounded-sm"
+        />
+        <div className="my-4 flex flex-col">
+          <p className="mt-1 text-xs text-neutral-600 dark:text-neutral-400">
+            help me increase it!!
+          </p>
         </div>
+      </div>
+    );
+  };
+  return (
+    <section
+      id="experience"
+      className="min-h-screen bg-black text-white flex items-center justify-center p-4 md:p-8"
+    >
+      <div className="flex flex-col items-center gap-6 md:gap-8">
+        <Tooltip
+          containerClassName="text-neutral-600 dark:text-neutral-400"
+          content={<TooltipCard />}
+        >
+          {" "}
+          <h1 className="text-2xl text-red-100">
+            Give me somesunshine, and some{" "}
+            <span className="cursor-pointer font-serif text-4xl text-red-800">Experience</span>
+          </h1>
+        </Tooltip>{" "}
+        {/* // Experience Cards */}
+        <BackgroundGradient>
+          {experiences.map((experience, index) => (
+            <motion.div
+              key={experience.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{
+                duration: 0.45,
+                ease: "easeOut",
+                delay: index * 0.12,
+              }}
+              className="w-full flex justify-center"
+            >
+              <article className="group relative border-2 border-fuchsia-500/10 flex h-full w-full max-w-xl flex-col overflow-hidden rounded-3xl">
+                {/* hover glow */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-[28px] bg-linear-to-br from-cyan-500/30 via-fuchsia-500/25 to-amber-400/25 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100"
+                />
+
+                <div className="relative z-10 flex flex-1 flex-col gap-3 rounded-[22px] bg-[#0f0f0f] p-5 shadow-2xl ring-1 ring-white/5 overflow-hidden">
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-gray-400">
+                    {experience.subtitle}
+                  </p>
+                  <h2 className="text-2xl font-semibold text-white">
+                    {experience.title}
+                  </h2>
+                  <p className="text-[13px] leading-relaxed text-gray-300">
+                    {experience.description}
+                  </p>
+                  <p className="text-[13px] leading-relaxed text-gray-300">
+                    <a
+                      href={experience.link}
+                      className="relative z-20 font-semibold underline decoration-red-400/60 underline-offset-4 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Check out
+                    </a>
+                  </p>
+                </div>
+              </article>
+            </motion.div>
+          ))}
+        </BackgroundGradient>
       </div>
     </section>
   );

@@ -1,4 +1,17 @@
+import { Tooltip } from "./ui/tooltip-card";
 export default function EducationContact() {
+  const TooltipCard = () => {
+    return (
+      <div className="">
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyOWRmYndlNnVxOGtyYzUzcW9maGl6djZ3bmZ5bjNpOTNnd2JteGpyZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/vSkXRfZ9mjNQY/200.gif"
+          alt="Tyler Durden"
+          className="aspect-auto  w-full rounded-sm"
+        />
+       
+      </div>
+    );
+  };
   return (
     <div
       id="contact"
@@ -10,13 +23,29 @@ export default function EducationContact() {
             Education Background
           </h2>
           <p className="text-2xl md:text-2xl leading-relaxed">
-            Did a BTech in Computer Science and Technology and passed with X.XX
-            CGPA (haven't passed yet, currently in 2nd Year)
+            Pursuing B.Tech in Computer Science and Technology from JIS College
+            of Engineering.{" "}
+            <Tooltip
+              containerClassName="text-neutral-600 dark:text-neutral-400"
+              content={<TooltipCard />}
+            >
+              {" "}
+              <span className="cursor-pointer font-serif text-4xl text-red-800">
+                Expecting
+              </span>
+            </Tooltip>{" "}
+            to graduate in 2028.
           </p>
         </div>
 
         <div>
-          <h2 className="text-5xl md:text-4xl font-bold mb-8">Feel free to talk</h2>
+          <h2 className="text-5xl md:text-4xl font-bold mb-8">
+            Feel free to talk{" "}
+            <span className="text-xl font-extralight font-serif">
+              {" "}
+              (coz i'm available 19*7)
+            </span>
+          </h2>
           <div className="flex flex-wrap gap-8 text-2xl md:text-2xl font-bold">
             <a
               href="https://www.linkedin.com/in/souryadeep-ganguly-b46054240/"

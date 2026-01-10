@@ -29,9 +29,10 @@ export default function AboutMe() {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          Hi, I am Souryadeep. A passionate webapp developer. Be it a gorgeous
-          frontend or an efficient backend, I will be at your service. Building
-          projects since '24 and I can make your ideas into reality.
+          Hi, I am Souryadeep. A passionate developer with a knack for
+          crafting efficient and scalable software solutions. I thrive on
+          turning complex problems into elegant code. I love collaborating with
+          cross-functional teams to bring innovative ideas to life. 
         </motion.p>
 
         <motion.p
