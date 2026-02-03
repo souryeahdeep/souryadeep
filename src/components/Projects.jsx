@@ -1,25 +1,13 @@
+import logo from "../../public/logo.png";
 const projects = [
-  // {
-  //   id: 1,
-  //   image: "https://via.placeholder.com/600x360?text=Project+One",
-  //   title: "Project One",
-  //   description: "A sleek web app demonstrating interactive UI patterns and responsive layouts.",
-  //   github: "https://github.com/your-handle/project-one",
-  // },
-  // {
-  //   id: 2,
-  //   image: "https://via.placeholder.com/600x360?text=Project+Two",
-  //   title: "Project Two",
-  //   description: "Microservice-backed API with authentication, caching, and observability hooks.",
-  //   github: "https://github.com/your-handle/project-two",
-  // },
-  // {
-  //   id: 3,
-  //   image: "https://via.placeholder.com/600x360?text=Project+Three",
-  //   title: "Project Three",
-  //   description: "Data-driven dashboard featuring real-time charts and accessibility-first design.",
-  //   github: "https://github.com/your-handle/project-three",
-  // },
+  {
+    id: 1,
+    image: logo,
+    title: "CollegeSaathi",
+    description: "The App that controlls everything in College. Divided into multiple microservices, it provides all the basic needs that a college system required.",
+    github: "https://github.com/souryeahdeep/CollegeSaathi",
+  },
+ 
 ];
 import { Tooltip } from "../components/ui/tooltip-card.jsx";
 export default function Projects() {
