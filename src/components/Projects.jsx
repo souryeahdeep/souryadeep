@@ -1,11 +1,19 @@
 import logo from "../../public/logo.png";
+import bridgeOps from "../../public/f0d620b9-6d2e-4a76-bf6c-e8801b7aaf21.png";
 const projects = [
   {
     id: 1,
     image: logo,
     title: "CollegeSaathi",
     description: "The App that controlls everything in College. Divided into multiple microservices, it provides all the basic needs that a college system required.",
-    github: "https://github.com/souryeahdeep/CollegeSaathi",
+    github: "https://youtu.be/6NYnYtlq7jg?si=txDQDX1jRevldigb",
+  },
+   {
+    id: 2,
+    image: bridgeOps,
+    title: "BridgeOps",
+    description: "BRINGS DEVELOPER, FOUNDERS,PROJECT MANAGERS ADMIN TOGETHER",
+    link: "https://youtu.be/zgbUp22Kb1Q?si=7XnE5-mbU5-e20MP",
   },
  
 ];
@@ -58,12 +66,12 @@ export default function Projects() {
                     {project.description}
                   </p>
                   <a
-                    href={project.github}
+                    href={project.link }
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-red-300 hover:text-red-200 font-semibold"
                   >
-                    View on GitHub
+                    Check out Project Demo
                     <span aria-hidden="true">↗</span>
                   </a>
                 </div>

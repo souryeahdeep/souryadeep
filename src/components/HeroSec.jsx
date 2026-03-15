@@ -1,5 +1,3 @@
-import myImage from "/myImage.png";
-import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { AuroraText } from "@/components/ui/aurora-text";
 import loved from "/loved.png";
@@ -7,6 +5,7 @@ import shocked from "/shocked.png";
 import sleep from "/sleep.png";
 import thinking from "/thinking.png";
 import { FlipWords } from "../components/ui/flip-words";
+import profileImageUrl from "/great_pic.png";
 
 export default function HeroSec() {
   const words = [
@@ -24,34 +23,14 @@ export default function HeroSec() {
       {/* Gradient overlay */}
 
       <div className="w-full max-w-7xl h-full flex flex-col lg:flex-row gap-8 lg:gap-20 justify-center items-center relative z-10">
-        <motion.div
-          className="flex flex-col gap-2 lg:gap-3.5 text-center lg:text-left"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.h1
-            className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-6xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+        <div className="flex flex-col gap-2 lg:gap-3.5 text-center lg:text-left">
+          <h1 className="text-4xl  font-bold sm:text-5xl md:text-6xl lg:text-6xl">
             <AuroraText>SOURYADEEP</AuroraText>
-          </motion.h1>
-          <motion.h2
-            className="text-4xl liter-regular sm:text-5xl md:text-6xl lg:text-5xl font-bold"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          </h1>
+          <h2 className="text-4xl liter-regular sm:text-5xl md:text-6xl lg:text-5xl font-bold">
             Ganguly
-          </motion.h2>
-          <motion.p
-            className="text-lg sm:text-xl lg:text-2xl mt-2"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          </h2>
+          <p className="text-lg sm:text-xl lg:text-2xl mt-2">
             <FlipWords words={words} duration={3000} className="text-white" />
             <TextAnimate by="text" delay={0.6} duration={1.5}>
               <img
@@ -79,20 +58,16 @@ export default function HeroSec() {
                 aria-hidden="true"
               />
             </TextAnimate>
-          </motion.p>
-        </motion.div>
-        <motion.div
-          className="h-64 sm:h-80 lg:h-[60vh] max-h-[500px] shrink-0"
-          initial={{ opacity: 0, x: 50, scale: 0.8 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        >
+          </p>
+        </div>
+        <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 shrink-0">
           <img
-            className="h-full w-auto object-cover rounded-lg"
-            src={myImage}
+            className="h-full w-full object-cover rounded-full border-4 border-red-300/70 shadow-2xl"
+            src={profileImageUrl}
             alt="Souryadeep Ganguly"
+            referrerPolicy="no-referrer"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
