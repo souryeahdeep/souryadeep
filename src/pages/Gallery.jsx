@@ -37,7 +37,6 @@ export default function Gallery() {
           <div
             key={index}
             className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 animate-fade-in"
-            onClick={() => setSelectedImage(image)}
             style={{ animationDelay: `${0.2 + index * 0.08}s` }}
           >
             <img
@@ -50,43 +49,7 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* Modal for full view */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/95 flex items-center justify-center p-4 z-50 backdrop-blur-sm animate-fade-in"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div
-            className="relative max-w-4xl max-h-[90vh] w-full animate-fade-in"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={selectedImage}
-              alt="Full view"
-              className="w-full h-full object-contain rounded-lg"
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all duration-300"
-              aria-label="Close"
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
+     
     </div>
   );
 }
