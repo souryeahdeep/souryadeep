@@ -1,18 +1,130 @@
-@import url(https://fonts.bunny.net/css?family=aclonica:400|andada-pro:600|b612-mono:400);
-@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Liter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
 
-:root {
-  font-family: 'Balsamiq Sans', sans-serif;
+@theme {
+  --font-aclonica: "Aclonica", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
 }
 
-*,
-*::before,
-*::after {
-  font-family: inherit;
-  font-weight: 400 !important;
+/* Smooth scroll and base styles */
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  color: white;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+/* Subtle breathing glow on the heading */
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 60px rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25), 0 0 80px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow 4s ease-in-out infinite;
+}
+
+/* Fade-in-up animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1.2s ease-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+/* Animation delay utilities */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+.animation-delay-900 {
+  animation-delay: 0.9s;
+}
+
+/* Fade in and up animation delay utilities */
+.animate-fade-in-up-delay {
+  animation: fade-in-up 1.2s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 1.2s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Image reveal zoom */
+@keyframes subtle-zoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 2s ease-out forwards;
+}
+
+/* Button shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
