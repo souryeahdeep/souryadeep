@@ -1,3 +1,4 @@
+import NavbarDemo from "@/components/resizable-navbar-demo";
 import { useState } from "react";
 
 export default function Projects() {
@@ -11,13 +12,27 @@ export default function Projects() {
       description: "A web application to manage college operations, including student enrollment, course management, and faculty administration.",
       technologies: ["React", "Spring Boot", "PostgreSQL"],
       link: "https://youtu.be/6NYnYtlq7jg?si=-EBjEjt4-Ju-5fi1",
-      image: "/logo.png",
+     },
+      {
+      id: 2,
+      title: "BridgeOps",
+      description: "BridgeOps is an extension of VS Code, that automizes everything you need for making an App. A Platform to manage your whole software development process in a single window.",
+      technologies: ["NextJS", "TypeScript", "Tailwind CSS", "Python"],
+      link: "https://youtu.be/zgbUp22Kb1Q?si=Q11ScJth0tSn-zX5",
+     },
+      {
+      id: 3,
+      title: "SentinelIQ",
+      description: "SentinelIQ is an AI-powered forensics platform that unifies scene analysis, biometrics, audio processing, and suspect identification into a single real-time intelligence system.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Python", "FastAPI"],
+      link: "#",
      },
   ];
 
   return (
     <div className="min-h-screen font-archivo bg-black text-white p-8 animate-fade-in">
-      <h1 className="text-4xl font-bold mb-4 animate-fade-in animation-delay-100">Projects</h1>
+      <NavbarDemo/>
+      <h1 className="text-4xl mt-20 font-bold mb-4 animate-fade-in animation-delay-100">Projects</h1>
       <p className="text-gray-400 mb-12 animate-fade-in animation-delay-200">I struggle to get good ideas for making personal projects. But let us see what's there in future.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

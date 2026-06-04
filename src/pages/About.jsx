@@ -11,6 +11,10 @@ export default function About() {
     navigate("/gallery");
   };
 
+  const handleResumeClick = () => {
+    window.open("/resume.pdf", "_blank");
+  };
+
   return (
     <div className="min-h-screen font-archivo text-white" style={{background: ""}}>
       
@@ -68,7 +72,7 @@ export default function About() {
                 <button onClick={handleGalleryClick} className="px-6 py-2 border border-green-500/50 text-green-400 rounded-full hover:bg-green-500/10 transition-all duration-300 hover:border-green-400 hover:scale-110 transform">
                   Gallery
                 </button>
-                <button className="px-6 py-2 border border-green-500/50 text-green-400 rounded-full hover:bg-green-500/10 transition-all duration-300 hover:border-green-400 hover:scale-110 transform">
+                <button onClick={handleResumeClick} className="px-6 py-2 border border-green-500/50 text-green-400 rounded-full hover:bg-green-500/10 transition-all duration-300 hover:border-green-400 hover:scale-110 transform">
                   Resume
                 </button>
               </div>
@@ -101,7 +105,7 @@ export default function About() {
               <h2 className="text-2xl font-bold text-white italic animate-fade-in">
                 Get in Touch
               </h2>
-              <p className="text-gray-300 leading-relaxed max-w-2xl animate-fade-in animation-delay-100">
+              <p className="text-gray-300 leading-relaxed max-w-3xl animate-fade-in animation-delay-100">
                 I'm always excited to connect with fellow developers, collaborators and potential employers. Whether you have a project in mind, want to chat about tech, or just want to say hi, feel free to reach out at <span className="text-blue-300"> souryadeep05@gmail.com </span> or through my social media channels below!
               </p>
 

@@ -28,9 +28,14 @@ export default function NavbarDemo() {
       name: "Projects",
       link: "/projects",
     },
+    {
+      name: "Stories",
+      link: "/stories",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMessageButtonHovered, setIsMessageButtonHovered] = useState(false);
   const navigate = useNavigate();
   const { stopAudio } = useGlobalAudio();
 
@@ -51,7 +56,12 @@ export default function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Leave a Message</NavbarButton>
+            <NavbarButton
+              variant="primary"
+              onMouseEnter={() => setIsMessageButtonHovered(true)}
+              onMouseLeave={() => setIsMessageButtonHovered(false)}>
+              {isMessageButtonHovered ? "UNDER CONSTRUCTION" : "Leave a Message"}
+            </NavbarButton>
           </div>
         </NavBody>
 
