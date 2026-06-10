@@ -22,7 +22,7 @@ export default function About() {
       <NavbarDemo/>
       
       {/* Main Container */}
-      <div className="max-w-4xl mx-auto px-9 py-10 pt-32">
+      <div className="max-w-4xl mx-auto px-4 md:px-9 py-10 pt-32">
         <div className="">
          
           {/* Main Content */}
@@ -61,8 +61,7 @@ export default function About() {
 
               {/* Bio */}
               <p className="text-gray-300 leading-relaxed max-w-3xl animate-fade-in animation-delay-500">
-                I am a developer who loves to design and ship scalable products that matter. I enjoy solving complex real-world development scenarios with real-world development. I particularly enjoy problem-solving with real-world development is sometimes truly enjoy. Hackathons have been a huge learning experience, helping me collaborate and build under pressure.
-              </p>
+I love building products that solve real problems at scale. Whether it's tackling algorithmic challenges or developing full-stack applications, I'm driven by the process of turning complex ideas into simple, effective solutions. DSA has sharpened my analytical thinking, while development gives me the opportunity to bring those ideas to life. Hackathons have further shaped my journey, teaching me teamwork, rapid execution, and how to thrive under pressure.              </p>
               <p className="text-gray-300 leading-relaxed max-w-3xl animate-fade-in animation-delay-600">
                 Aside from tech, I enjoy movies, books, and introspecting into human life.
               </p>

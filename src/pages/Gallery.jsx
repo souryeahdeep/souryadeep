@@ -17,7 +17,7 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="min-h-screen font-archivo bg-black text-white p-8 animate-fade-in">
+    <div className="min-h-screen font-archivo bg-black text-white p-4 md:p-8 animate-fade-in">
       
       <div className="flex items-center justify-between gap-6 mb-12 animate-fade-in animation-delay-100">
         <button 

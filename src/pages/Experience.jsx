@@ -39,14 +39,14 @@ const hackathonexperiences = [
 export default function Experience() {
   return (
     <div
-      className="min-h-screen font-archivo text-white"
+      className="min-h-screen  font-archivo text-white"
       style={{ background: "" }}
     >
       {/* Universal Navbar */}
       <NavbarDemo />
 
       {/* Work Container */}
-      <div className="max-w-4xl mx-auto px-9 py-10 pt-32 animate-fade-in">
+      <div className="max-w-4xl mx-auto px-4 md:px-9 py-10 pt-32 animate-fade-in">
         <div className="flex flex-col gap-3 animate-fade-in animation-delay-100">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white animate-fade-in animation-delay-200">
             Work EXPERIENCE
@@ -80,7 +80,7 @@ export default function Experience() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-9 py-10 pt-32 animate-fade-in animation-delay-500">
+      <div className="max-w-4xl mx-auto px-4 py-10 pt-32 animate-fade-in animation-delay-500">
         <div className="flex flex-col gap-3 animate-fade-in animation-delay-600">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white animate-fade-in animation-delay-700">
             Hackathon EXPERIENCE

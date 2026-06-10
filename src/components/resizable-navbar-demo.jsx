@@ -58,6 +58,7 @@ export default function NavbarDemo() {
           <div className="flex items-center gap-4">
             <NavbarButton
               variant="primary"
+              onMouseClick={()=> setIsMessageButtonHovered(true)}
               onMouseEnter={() => setIsMessageButtonHovered(true)}
               onMouseLeave={() => setIsMessageButtonHovered(false)}>
               {isMessageButtonHovered ? "UNDER CONSTRUCTION" : "Leave a Message"}

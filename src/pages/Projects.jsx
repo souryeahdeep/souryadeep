@@ -30,10 +30,10 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen font-archivo bg-black text-white p-8 animate-fade-in">
+    <div className="min-h-screen font-archivo bg-black text-white p-4 md:p-8 animate-fade-in">
       <NavbarDemo/>
       <h1 className="text-4xl mt-20 font-bold mb-4 animate-fade-in animation-delay-100">Projects</h1>
-      <p className="text-gray-400 mb-12 animate-fade-in animation-delay-200">I struggle to get good ideas for making personal projects. But let us see what's there in future.</p>
+      <p className="text-gray-400 mb-12 animate-fade-in animation-delay-200">I struggle to get good ideas for making personal projects. But WHEN I DO! Can't stop me.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.length > 0 ? (

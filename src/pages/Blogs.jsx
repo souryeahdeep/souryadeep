@@ -44,27 +44,28 @@ const BLOGS = [
 /* ─── Blog List ───────────────────────────────────────────────────────── */
 export function BlogList({ onSelect }) {
   return (
-    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
       <NavbarDemo/>  
       <div className="max-w-4xl mt-10 mx-auto">
        
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+        <div className="mb-12 animate-fade-in animation-delay-100">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in animation-delay-200">
             Blogs
           </h1>
-          <p className="text-lg text-slate-300">
+          <p className="text-lg text-slate-300 animate-fade-in animation-delay-300">
             I write sometimes without thinking and call it a blog.
           </p>
         </div>
 
         {/* Blog List */}
         <div className="space-y-6">
-          {BLOGS.map((blog) => (
+          {BLOGS.map((blog, idx) => (
             <div
               key={blog.id}
-              className="group cursor-pointer bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/50 hover:border-green-500/30 rounded-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10"
+              className="group cursor-pointer bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/50 hover:border-green-500/30 rounded-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 animate-fade-in hover:translate-x-2"
               onClick={() => onSelect(blog)}
+              style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
             >
              
 
@@ -128,12 +129,12 @@ function renderBlock(block, i) {
 /* ─── Article Page ────────────────────────────────────────────────────── */
 function ArticlePage({ blog, onBack }) {
   return (
-    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
       <NavbarDemo />
       <div className="max-w-3xl mx-auto mt-10">
         {/* Back Button */}
         <button
-          className="mb-8 flex items-center gap-2 text-slate-300 hover:text-green-400 transition-colors duration-300 font-medium text-sm"
+          className="mb-8 flex items-center gap-2 text-slate-300 hover:text-green-400 transition-colors duration-300 font-medium text-sm animate-fade-in animation-delay-100 hover:translate-x-2 transform"
           onClick={onBack}
         >
           ← Back to Blogs
@@ -142,14 +143,14 @@ function ArticlePage({ blog, onBack }) {
         
 
         {/* Article Title */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight animate-fade-in animation-delay-200">
           {blog.title}
         </h1>
 
        
 
         {/* Article Body */}
-        <div className="prose prose-invert max-w-none">
+        <div className="prose prose-invert max-w-none animate-fade-in animation-delay-300">
           {blog.content.map(renderBlock)}
         </div>
       </div>

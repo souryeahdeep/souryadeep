@@ -36,7 +36,7 @@ export function AudioProvider({ children }) {
 
     setInitialized(true);
 
-    // Save audio state periodically and on page unload
+    // Save audio state periodically
     const saveState = () => {
       if (audioRef.current) {
         const state = {
@@ -52,13 +52,32 @@ export function AudioProvider({ children }) {
     // Save state every 500ms
     const interval = setInterval(saveState, 500);
 
-    // Save state before unload
-    window.addEventListener("beforeunload", saveState);
+    // Stop audio and clear state when page is being unloaded or hidden
+    const handleBeforeUnload = () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+      }
+      sessionStorage.removeItem("audioState");
+    };
+
+    // Handle page visibility change (mobile tab switching, minimizing, etc.)
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Page is hidden, stop audio
+        if (audioRef.current) {
+          audioRef.current.pause();
+        }
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       clearInterval(interval);
-      window.removeEventListener("beforeunload", saveState);
-      saveState();
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
 
