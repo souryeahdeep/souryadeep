@@ -23,6 +23,7 @@ export default function About() {
       
       {/* Main Container */}
       <div className="max-w-4xl mx-auto px-4 md:px-9 py-10 pt-32">
+        
         <div className="">
          
           {/* Main Content */}

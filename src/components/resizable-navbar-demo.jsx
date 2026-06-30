@@ -58,7 +58,7 @@ export default function NavbarDemo() {
           <div className="flex items-center gap-4">
             <NavbarButton
               variant="primary"
-              onMouseClick={()=> setIsMessageButtonHovered(true)}
+              href="/guestbook"
               onMouseEnter={() => setIsMessageButtonHovered(true)}
               onMouseLeave={() => setIsMessageButtonHovered(false)}>
               {isMessageButtonHovered ? "UNDER CONSTRUCTION" : "Leave a Message"}
@@ -87,6 +87,7 @@ export default function NavbarDemo() {
             <div className="flex w-full flex-col gap-4">
              
               <NavbarButton
+                href="/guestbook"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full">

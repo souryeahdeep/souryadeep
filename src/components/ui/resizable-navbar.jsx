@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useGlobalAudio } from "@/contexts/AudioContext";
 
 
@@ -242,7 +242,8 @@ export const NavbarLogo = () => {
 
 export const NavbarButton = ({
   href,
-  as: Tag = "a",
+  to,
+  as,
   children,
   className,
   variant = "primary",
@@ -260,10 +261,22 @@ export const NavbarButton = ({
       "bg-gradient-to-b from-blue-500 to-blue-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]",
   };
 
+  // Determine which Tag to use
+  let Tag = as;
+  if (!Tag) {
+    if (to || (href && href.startsWith("/"))) {
+      Tag = Link;
+    } else {
+      Tag = "a";
+    }
+  }
+
+  const linkProps = Tag === Link ? { to: to || href } : { href: href || undefined };
+
   return (
     <Tag
-      href={href || undefined}
       className={cn(baseStyles, variantStyles[variant], className)}
+      {...linkProps}
       {...props}>
       {children}
     </Tag>

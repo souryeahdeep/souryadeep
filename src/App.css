@@ -15,6 +15,10 @@ body {
   color: #00fff7;
   text-shadow: 0 0 10px #00fff7;
 }
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/ness.ttf') format('truetype');
+}
 
 .input-box {
   display: flex;

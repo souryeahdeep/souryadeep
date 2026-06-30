@@ -6,6 +6,7 @@ import Experience from "./pages/Experience";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import BlogList from "./pages/Blogs";
+import Guestbook from "./pages/Guestbook";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/stories" element={<BlogList />} />
+        {/* <Route path="/guestbook" element={<Guestbook />} /> */}
       </Routes>
     </AudioProvider>
   );
