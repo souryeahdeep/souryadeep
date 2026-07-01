@@ -6,7 +6,6 @@ import Experience from "./pages/Experience";
 import Gallery from "./pages/Gallery";
 import Projects from "./pages/Projects";
 import BlogList from "./pages/Blogs";
-import Guestbook from "./pages/Guestbook";
 
 export default function App() {
   return (
