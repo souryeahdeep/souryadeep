@@ -22,11 +22,19 @@ export default function Projects() {
      },
       {
       id: 3,
+      title: "APISentry",
+      description: "APISentry automatically catches breaking API changes in Spring Boot projects before they ship. On every pull request, it generates the OpenAPI spec, diffs it against the last stable version, and flags exactly which endpoints changed — then scans your connected frontend apps to show which files will actually break.",
+      technologies: ["Github", "YAML","Command Line"],
+      link: "https://github.com/souryeahdeep/apisentry-action",
+     },
+      {
+      id: 4,
       title: "SentinelIQ",
       description: "SentinelIQ is an AI-powered forensics platform that unifies scene analysis, biometrics, audio processing, and suspect identification into a single real-time intelligence system.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Python", "FastAPI"],
       link: "#",
      },
+    
   ];
 
   return (
