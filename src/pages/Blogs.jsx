@@ -44,16 +44,15 @@ const BLOGS = [
 /* ─── Blog List ───────────────────────────────────────────────────────── */
 export function BlogList({ onSelect }) {
   return (
-    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
-      <NavbarDemo/>  
-      <div className="max-w-4xl mt-10 mx-auto">
-       
+    <div className="min-h-screen font-archivo bg-amber-50 text-black dark:bg-black dark:text-white transition-colors duration-300">
+      <NavbarDemo />
+      <div className="max-w-4xl mx-auto px-4 md:px-9 pt-32 pb-16">
         {/* Header */}
         <div className="mb-12 animate-fade-in animation-delay-100">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in animation-delay-200">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in animation-delay-200">
             Blogs
           </h1>
-          <p className="text-lg text-slate-300 animate-fade-in animation-delay-300">
+          <p className="text-lg text-slate-600 dark:text-slate-300 animate-fade-in animation-delay-300">
             I write sometimes without thinking and call it a blog.
           </p>
         </div>
@@ -63,19 +62,17 @@ export function BlogList({ onSelect }) {
           {BLOGS.map((blog, idx) => (
             <div
               key={blog.id}
-              className="group cursor-pointer bg-slate-800/40 hover:bg-slate-800/70 border border-slate-700/50 hover:border-green-500/30 rounded-lg p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10 animate-fade-in hover:translate-x-2"
+              className="group cursor-pointer bg-white hover:bg-gray-50 border border-gray-200 hover:border-green-500/50 dark:bg-slate-800/40 dark:hover:bg-slate-800/70 dark:border-slate-700/50 dark:hover:border-green-500/30 rounded-lg p-6 sm:p-8 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-emerald-500/10 animate-fade-in hover:translate-x-2"
               onClick={() => onSelect(blog)}
               style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
             >
-             
-
               {/* Title */}
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors duration-300">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
                 {blog.title}
               </h2>
 
               {/* Excerpt */}
-              <p className="text-slate-300 leading-relaxed mb-4">
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                 {blog.excerpt}
               </p>
             </div>
@@ -91,13 +88,19 @@ function renderBlock(block, i) {
   switch (block.type) {
     case "p":
       return (
-        <p key={i} className="text-slate-300 leading-relaxed text-lg mb-6">
+        <p
+          key={i}
+          className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg mb-6"
+        >
           {block.text}
         </p>
       );
     case "h2":
       return (
-        <h2 key={i} className="text-3xl font-bold text-white mt-10 mb-4">
+        <h2
+          key={i}
+          className="text-3xl font-bold text-gray-900 dark:text-white mt-10 mb-4"
+        >
           {block.text}
         </h2>
       );
@@ -105,14 +108,17 @@ function renderBlock(block, i) {
       return (
         <div
           key={i}
-          className="bg-emerald-500/10 border-l-4 border-emerald-500 rounded px-6 py-4 my-6 text-slate-200 italic text-lg"
+          className="bg-emerald-500/10 border-l-4 border-emerald-500 rounded px-6 py-4 my-6 text-slate-700 dark:text-slate-200 italic text-lg"
         >
           {block.text}
         </div>
       );
     case "ul":
       return (
-        <ul key={i} className="list-disc list-inside space-y-3 mb-6 text-slate-300">
+        <ul
+          key={i}
+          className="list-disc list-inside space-y-3 mb-6 text-slate-700 dark:text-slate-300"
+        >
           {block.items.map((item, j) => (
             <li key={j} className="leading-relaxed">
               {item}
@@ -125,32 +131,27 @@ function renderBlock(block, i) {
   }
 }
 
-
 /* ─── Article Page ────────────────────────────────────────────────────── */
 function ArticlePage({ blog, onBack }) {
   return (
-    <div className="min-h-screen font-archivo bg-black px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
+    <div className="min-h-screen font-archivo bg-amber-50 text-black dark:bg-black dark:text-white transition-colors duration-300 animate-fade-in">
       <NavbarDemo />
-      <div className="max-w-3xl mx-auto mt-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         {/* Back Button */}
         <button
-          className="mb-8 flex items-center gap-2 text-slate-300 hover:text-green-400 transition-colors duration-300 font-medium text-sm animate-fade-in animation-delay-100 hover:translate-x-2 transform"
+          className="mb-8 flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300 font-medium text-sm animate-fade-in animation-delay-100 hover:translate-x-2 transform"
           onClick={onBack}
         >
           ← Back to Blogs
         </button>
 
-        
-
         {/* Article Title */}
-        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight animate-fade-in animation-delay-200">
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-fade-in animation-delay-200">
           {blog.title}
         </h1>
 
-       
-
         {/* Article Body */}
-        <div className="prose prose-invert max-w-none animate-fade-in animation-delay-300">
+        <div className="max-w-none animate-fade-in animation-delay-300">
           {blog.content.map(renderBlock)}
         </div>
       </div>

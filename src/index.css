@@ -17,7 +17,7 @@ body {
   background-color: #000;
   overflow-x: hidden;
 }
-
+@custom-variant dark (&:where(.dark, .dark *));
 /* Subtle breathing glow on the heading */
 @keyframes text-glow {
   0%, 100% {

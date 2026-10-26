@@ -38,20 +38,18 @@ const hackathonexperiences = [
 
 export default function Experience() {
   return (
-    <div
-      className="min-h-screen  font-archivo text-white"
-      style={{ background: "" }}
-    >
+       <div className="min-h-screen font-archivo bg-amber-50 text-black dark:bg-black dark:text-white transition-colors duration-300">
+
       {/* Universal Navbar */}
       <NavbarDemo />
 
       {/* Work Container */}
       <div className="max-w-4xl mx-auto px-4 md:px-9 py-10 pt-32 animate-fade-in">
         <div className="flex flex-col gap-3 animate-fade-in animation-delay-100">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white animate-fade-in animation-delay-200">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light dark:text-white animate-fade-in animation-delay-200">
             Work EXPERIENCE
           </h1>
-          <h3 className="text-sm sm:text-base md:text-lg font-light text-gray-300 animate-fade-in animation-delay-300">
+          <h3 className="text-sm sm:text-base md:text-lg font-light dark:text-gray-300 animate-fade-in animation-delay-300">
             I have just started my journey in the world of software development,
             and I am eager to gain hands-on experience and contribute to
             real-world projects. I am actively seeking internships and
@@ -67,12 +65,12 @@ export default function Experience() {
                     <span>•</span>
                     <span>{experience.location}</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base md:text-lg font-medium text-white">
+                <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base md:text-lg font-medium dark:text-white">
                     <span>{experience.position}</span>
                     <span className="text-green-400">@</span>
                     <span>{experience.company}</span>
                 </div>
-                <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base dark:text-gray-300 leading-relaxed">
                     {experience.description}
                 </p>
               </div>
@@ -82,10 +80,10 @@ export default function Experience() {
 
       <div className="max-w-4xl mx-auto px-4 py-10 pt-32 animate-fade-in animation-delay-500">
         <div className="flex flex-col gap-3 animate-fade-in animation-delay-600">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white animate-fade-in animation-delay-700">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light dark:text-white animate-fade-in animation-delay-700">
             Hackathon EXPERIENCE
           </h1>
-          <h3 className="text-sm sm:text-base md:text-lg font-light text-gray-300 animate-fade-in animation-delay-800">
+          <h3 className="text-sm sm:text-base md:text-lg font-light dark:text-gray-300 animate-fade-in animation-delay-800">
             Hackathons are meant to teach us how to build under pressure, collaborate with tech geeks and I have participated in a few of them. 
             I am excited to continue participating in hackathons to learn, grow, and connect with other developers.
           </h3>
@@ -98,12 +96,12 @@ export default function Experience() {
                     <span>•</span>
                     <span>{experience.location}</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base md:text-lg font-medium text-white">
+                <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base md:text-lg font-medium dark:text-white">
                     <span>{experience.project}</span>  
                     <span className="text-green-400">@</span>
                     <span>{experience.hackathon}</span>
                 </div>
-                <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base dark:text-gray-300 leading-relaxed">
                     {experience.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
