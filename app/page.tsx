@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Fragment, useEffect, useState, type CSSProperties } from "react";
@@ -12,6 +13,9 @@ import About from "@/components/About";
 import MoltenMetal from "@/components/MoltenMetal";
 import { Tooltip } from "@/components/ui/tooltip-card";
 import Link from "next/link";
+import { Sunflower } from "next/font/google";
+import { SmoothCursorDemo } from "@/components/smooth-cursor-demo";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const FluxLines = dynamic(() => import("@/components/FluxLines"), {
   ssr: false,
@@ -82,7 +86,7 @@ export default function Home() {
   return (
     <>
       <UseSmoothScroll speed={2} />
-
+      
       <div className="min-h-screen bg-[#DDDCDB] font-sans selection:bg-amber-500 dark:bg-[#3C4044]">
         <button
           type="button"
@@ -90,7 +94,7 @@ export default function Home() {
           className="fixed top-6 right-6 z-50 rounded-full border border-[#3C4044]/20 bg-[#E1D5CB]/70 px-4 py-2 text-sm text-[#3C4044] backdrop-blur-md transition-colors hover:bg-[#E1D5CB] dark:border-[#DDDCDB]/20 dark:bg-[#4C5053]/70 dark:text-[#DDDCDB] dark:hover:bg-[#4C5053]"
           aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
         >
-          {isDark ? "Light mode" : "Dark mode"}
+          {isDark ? <img alt="LIGHT MODE" className="w-5" src="/sun.png"/> : <img alt="MOON MODE" className="w-5" src="/moon.png"/>}
         </button>
 
         {/* HERO */}
@@ -189,7 +193,7 @@ export default function Home() {
         {/* PRODUCTS */}
         <section id="work" className="w-full">
           {/* same side padding as the card stack */}
-          <div className="px-[clamp(14px,4vw,64px)]">
+          <div className="px-[clamp(14px,2vw,64px)]">
             {/* same max width and centring as the card */}
             <div className="mx-auto w-full max-w-[860px]">
               <h2 className="instrument-serif-regular text-5xl text-[#3C4044] dark:text-[#DDDCDB]">

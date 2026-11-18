@@ -25,16 +25,23 @@ const columns = [
 export default function Footer() {
   return (
     // outer wrapper creates the gap from both screen edges
-    <footer className="px-4 mb-2 pb-16 pt-10 md:px-8">
+    <footer className="mb-2 px-4 pb-16 pt-10 md:px-8">
       <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-[#3C4044]/15 bg-[#EDBF9B]/30 dark:border-[#DDDCDB]/15 dark:bg-[#DDDCDB]/5">
-        <div className="grid gap-12 p-18 md:grid-cols-2 md:p-12">
+        <div className="grid gap-10 p-6 sm:p-8 md:grid-cols-2 md:gap-12 md:p-12">
           {/* brand */}
-          <div className="flex flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4">
             <a
               href="#top"
-              className="flex w-fit items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
+              aria-label="Souryadeep, back to top"
+              className="block w-full max-w-[280px] rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
             >
-              <Signature text="Souryadeep" fontSize={28} duration={1.5} />
+              {/* h-auto + max-w-full: the signature scales down to fit the card */}
+              <Signature
+                text="Souryadeep"
+                fontSize={28}
+                duration={1.5}
+                className="h-auto w-full max-w-full"
+              />
             </a>
             <p className="font-sans text-sm text-[#3C4044]/70 dark:text-[#DDDCDB]/70">
               Made By Sonnet and Sourya. Inspired by many great developers.
@@ -44,10 +51,10 @@ export default function Footer() {
           {/* link columns */}
           <nav
             aria-label="Footer"
-            className="grid grid-cols-2 gap-8 sm:grid-cols-3"
+            className="grid min-w-0 grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3"
           >
             {columns.map((col) => (
-              <div key={col.title} className="flex flex-col gap-3">
+              <div key={col.title} className="flex min-w-0 flex-col gap-3">
                 <p className="font-sans text-sm font-semibold text-[#3C4044] dark:text-[#DDDCDB]">
                   {col.title}
                 </p>
@@ -59,7 +66,7 @@ export default function Footer() {
                         {...(link.external
                           ? { target: "_blank", rel: "noopener noreferrer" }
                           : {})}
-                        className="font-sans text-sm text-[#3C4044]/75 transition-colors duration-300 hover:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB]/75 dark:hover:text-[#FD7B41]"
+                        className="break-words font-sans text-sm text-[#3C4044]/75 transition-colors duration-300 hover:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB]/75 dark:hover:text-[#FD7B41]"
                       >
                         {link.label}
                       </a>
@@ -70,8 +77,6 @@ export default function Footer() {
             ))}
           </nav>
         </div>
-
-        {/* big faded name at the bottom */}
       </div>
     </footer>
   );

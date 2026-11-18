@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { IconArrowBadgeRightFilled, IconSignRight } from "@tabler/icons-react";
 import {
   motion,
   useMotionTemplate,
@@ -16,6 +17,7 @@ export interface CaseStudyFlipItem {
   number?: string;
   eyebrow: string;
   title: string;
+  slug: string;
   description: string;
   image: string;
   imageAlt: string;
@@ -35,6 +37,7 @@ const DEFAULT_ITEMS: CaseStudyFlipItem[] = [
   {
     eyebrow: "CI/CD developer tool",
     title: "ApiSentry",
+    slug:"/projects/apisentry",
     description:
       "ApiSentry is a GitHub Action that runs on every pull request. It builds your Spring Boot app, generates its OpenAPI spec, compares it against the last stable version, and — if anything breaking is found — posts a PR comment with the exact details and fails the check.",
     image: "/APISEN.png",
@@ -45,6 +48,7 @@ const DEFAULT_ITEMS: CaseStudyFlipItem[] = [
   {
     eyebrow: " Collaborative Tools Workspace",
     title: "BridgeOps",
+    slug:"/projects/bridgeops",
     description:
       "From ideation to deployment, BridgeOps helps teams manage people, organize tasks, and work with code in one unified workspace. Collaborate better. Understand faster. Build together.",
     image: "/BRIDGEOPS.png",
@@ -55,10 +59,11 @@ const DEFAULT_ITEMS: CaseStudyFlipItem[] = [
   {
     eyebrow: "Quiz App",
     title: "College Management System",
+    slug:"/projects/campusos",
     description:
       "The App that controlls everything in College. Divided into multiple microservices, it provides all the basic needs that a college system required.",
     image:
-      "/image.png",
+      "/COS.png",
     imageAlt: "Colorful artwork in a contemporary gallery",
     background: "#a94808",
     foreground: "#fff1f7",
@@ -126,6 +131,7 @@ function FlipCard({
 
   return (
     <motion.article
+
       className="absolute inset-x-0 top-0 aspect-[3/4] will-change-transform sm:aspect-[1.76/1]"
       style={{
         y: exitY,
@@ -137,7 +143,9 @@ function FlipCard({
         backfaceVisibility: "hidden",
       }}
     >
+      
       <motion.div
+        
         className="grid h-full overflow-hidden rounded-[clamp(18px,2vw,30px)] shadow-[0_16px_50px_rgba(20,17,10,0.18)] sm:grid-cols-[1.15fr_0.85fr]"
         style={{
           backgroundColor: item.background,
@@ -158,9 +166,10 @@ function FlipCard({
             <p className="mb-[clamp(10px,1.5vw,22px)] text-[10px] font-semibold uppercase tracking-[0.16em] opacity-70 sm:text-xs">
               {item.eyebrow}
             </p>
-            <h2 className="max-w-[16ch] text-balance text-[clamp(28px,3.25vw,48px)] font-semibold leading-[0.96] tracking-[-0.05em]">
-              {item.title}
-            </h2>
+            <a href={item.slug}  className="max-w-[16ch] flex items-center gap-2 hover:text-black text-balance text-[clamp(28px,3.25vw,48px)] font-semibold leading-[0.96] tracking-[-0.05em]">
+              {item.title}  <IconArrowBadgeRightFilled/>
+            </a>
+            
             <p className="mt-[clamp(16px,1.8vw,24px)] max-w-[42rem] text-[clamp(13px,1.1vw,16px)] leading-[1.5] opacity-82">
               {item.description}
             </p>
@@ -216,7 +225,7 @@ export function CaseStudyFlipStack({
         className="relative"
         style={{ height: `${Math.max(safeItems.length, 1) * 100}vh` }}
       >
-        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden px-[clamp(14px,4vw,64px)] py-8">
+        <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden px-[clamp(14px,4vw,64px)] py-2">
           <div className="relative mx-auto aspect-[3/4] w-full max-w-[860px] [perspective:800px] sm:aspect-[1.76/1]">
             {[...safeItems].reverse().map((item, reverseIndex) => {
               const index = safeItems.length - reverseIndex - 1;

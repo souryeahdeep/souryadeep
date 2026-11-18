@@ -6,6 +6,7 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
+import { IconArrowLeftDashed, IconArrowRightDashed, IconArrowWaveLeftDown, IconSignLeft } from "@tabler/icons-react";
 
 /* ---------- edit these: swap in your own photos ---------- */
 const items = [
@@ -218,7 +219,7 @@ export default function GalleryBoard() {
                   aria-label="Previous photo"
                   className={roundBtn}
                 >
-                  ←
+                  <IconArrowLeftDashed/>
                 </button>
                 <div className="text-center">
                   <p className="instrument-serif-regular text-2xl text-[#3C4044] dark:text-[#DDDCDB]">
@@ -234,7 +235,7 @@ export default function GalleryBoard() {
                   aria-label="Next photo"
                   className={roundBtn}
                 >
-                  →
+                  <IconArrowRightDashed/>
                 </button>
               </figcaption>
             </motion.figure>

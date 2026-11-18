@@ -2,6 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Tooltip } from "./ui/tooltip-card";
+import { useCanHover } from "@/lib/use-can-hover";
+import Link from "next/link";
 
 // Dotted underline used for the highlighted words and links
 const link =
@@ -9,6 +11,12 @@ const link =
 
 export default function About() {
   const reduce = useReducedMotion();
+  const canHover = useCanHover();
+  const title = (
+    <>
+      About<span className="text-[#FD7B41]">.</span>
+    </>
+  );
 
   return (
     <section id="about" className="w-full py-10 md:py-24">
@@ -20,13 +28,19 @@ export default function About() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <a href="/about" className="instrument-serif-regular text-5xl text-[#3C4044] dark:text-[#DDDCDB] md:text-6xl">
-           <Tooltip
-            containerClassName=""
-            content="Click to know more!!"
-          >About<span className="text-[#FD7B41]">.</span></Tooltip>  
-          </a>
-          
+          <Link
+            href="/about"
+            className="inline-block rounded-lg instrument-serif-regular text-5xl text-[#3C4044] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB] md:text-6xl"
+          >
+            {canHover ? (
+              <Tooltip containerClassName="" content="Click to know more!!">
+                {title}
+              </Tooltip>
+            ) : (
+              title
+            )}
+          </Link>
+
           <div className="mt-6 flex flex-col gap-4 font-sans text-base leading-7 text-[#3C4044]/75 dark:text-[#DDDCDB]/75 md:text-lg md:leading-8">
             <p>
               <span aria-hidden="true">😁 </span>

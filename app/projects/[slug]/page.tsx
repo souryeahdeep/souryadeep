@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/theme-toggle";
 import FloatingDockDemo from "@/components/floating-dock-demo";
 import Footer from "@/components/Footer";
 import { projects, getProject, getAdjacent } from "@/lib/project";
-
+import { Suspense } from "react";
 type Props = { params: Promise<{ slug: string }> };
 
 // Builds one page per project ahead of time
@@ -33,6 +33,21 @@ const linkBtn =
   "rounded-lg border border-[#3C4044]/30 px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#3C4044]/10 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/30 dark:text-[#DDDCDB] dark:hover:bg-[#DDDCDB]/10";
 
 export default async function ProjectPage({ params }: Props) {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen grid place-items-center bg-[#DDDCDB] dark:bg-[#3C4044]">
+          <p className="text-[#FD7B41] font-semibold animate-pulse">
+            Loading project...
+          </p>
+        </div>
+      }
+    >
+      <ProjectContent params={params} />
+    </Suspense>
+  );
+}
+async function ProjectContent({ params }: Props) {
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
@@ -78,6 +93,16 @@ export default async function ProjectPage({ params }: Props) {
                     className="rounded-lg bg-[#FD7B41] px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
                   >
                     Visit live site
+                  </a>
+                )}
+                {project.demo && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-[#FD7B41] px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
+                  >
+                    View Demo
                   </a>
                 )}
                 {project.github && (
