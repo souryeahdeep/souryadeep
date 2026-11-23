@@ -103,7 +103,7 @@ export default function Home() {
         {/* HERO */}
         <main id="top" className="relative px-[clamp(14px,4vw,64px)]  pt-12">
           {/* Same 860px column as every other section */}
-          <div className="pointer-events-none relative z-10 mx-auto flex w-full max-w-[860px] flex-col gap-8 text-left">
+          <div className=" relative z-10 mx-auto flex w-full max-w-[860px] flex-col gap-8 text-left">
             <div
               className="fade-up pointer-events-auto w-full max-w-full overflow-hidden rounded-3xl border border-[#3C4044]/15 dark:border-[#DDDCDB]/15"
               style={{ animationDelay: "0ms" }}
@@ -114,7 +114,7 @@ export default function Home() {
                 className="block h-[325px] w-full"
               />
             </div>
-            <h1 className="relative text-4xl md:text-4xl lg:text-5xl sm:text-4xl z-10 text-[#FD7B41]">
+            <h1 className="relative text-3xl md:text-4xl lg:text-5xl sm:text-4xl z-10 text-[#FD7B41]">
               Heyya!! I&apos;m Souryadeep.
               <p className="italic text-[1.5rem] font-stretch-90% text-[#3C4044] dark:text-[#DDDCDB] pt-2">
                 your friendly distant backend dev.
@@ -148,7 +148,7 @@ export default function Home() {
                   </a>{" "}
                   or{" "}
                   <a
-                    href="{{linkedin url}}"
+                    href="https://www.linkedin.com/in/souryadeep-ganguly-b46054240/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-[#3C4044] transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#FD7B41] focus-visible:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB] dark:hover:text-[#FD7B41]"
@@ -215,10 +215,10 @@ export default function Home() {
           <div className="px-[clamp(14px,2vw,64px)]">
             {/* same max width and centring as the card */}
             <div className="mx-auto w-full max-w-[860px]">
-              <h2 className="instrument-serif-regular lg:text-5xl text-4xl text-[#3C4044] dark:text-[#DDDCDB]">
+              <h2 className="instrument-serif-regular text-3xl lg:text-5xl text-[#3C4044] dark:text-[#DDDCDB]">
                 <Link
                   href="/projects"
-                  className="instrument-serif-regular text-[#3C4044] dark:text-[#DDDCDB]"
+                  className="instrument-serif-regular  text-[#3C4044] dark:text-[#DDDCDB]"
                 >
                   Products
                 </Link>{" "}
