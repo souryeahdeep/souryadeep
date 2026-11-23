@@ -101,10 +101,7 @@ export default function Home() {
           )}
         </button>
         {/* HERO */}
-        <main
-          id="top"
-          className="relative px-[clamp(14px,4vw,64px)]  pt-12"
-        >
+        <main id="top" className="relative px-[clamp(14px,4vw,64px)]  pt-12">
           {/* Same 860px column as every other section */}
           <div className="pointer-events-none relative z-10 mx-auto flex w-full max-w-[860px] flex-col gap-8 text-left">
             <div
@@ -117,7 +114,7 @@ export default function Home() {
                 className="block h-[325px] w-full"
               />
             </div>
-            <h1 className="relative intro text-5xl z-10 text-[#FD7B41]">
+            <h1 className="relative text-4xl md:text-4xl lg:text-5xl sm:text-4xl z-10 text-[#FD7B41]">
               Heyya!! I&apos;m Souryadeep.
               <p className="italic text-[1.5rem] font-stretch-90% text-[#3C4044] dark:text-[#DDDCDB] pt-2">
                 your friendly distant backend dev.
@@ -127,7 +124,14 @@ export default function Home() {
             <div className="fade-up flex flex-col gap-8">
               <div className="mt-6 flex flex-col gap-4 font-sans text-base leading-7 text-[#3C4044]/75 dark:text-[#DDDCDB]/75 md:text-lg md:leading-8">
                 <p>
-                  <span aria-hidden="true">😁 </span>
+                  <Image
+                    src="/ABOUT.png"
+                    width={50}
+                    height={50}
+                    alt=""
+                    aria-hidden="true"
+                    className="mr-2 inline-block h-[1.25em] w-[1.25em] align-middle"
+                  />
                   {
                     "Third year B.Tech student who mostly focuses on building scalable high available architecture"
                   }{" "}
@@ -137,7 +141,7 @@ export default function Home() {
                   <br />
                   Any query for my site or project? Feel free to contact me by{" "}
                   <a
-                    href="mailto:{{email}}"
+                    href="mailto:souryadeep05@gmail.com"
                     className="font-bold text-[#3C4044] transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-[#FD7B41] focus-visible:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB] dark:hover:text-[#FD7B41]"
                   >
                     Email
@@ -155,48 +159,48 @@ export default function Home() {
                 </p>
               </div>
 
-            <div className="pointer-events-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-  {/* Two main buttons: equal width and side by side on phones */}
-  <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">
-    <a
-      href="/Souryadeep_Ganguly_Resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-[#3C4044]/30 px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#3C4044]/10 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/30 dark:text-[#DDDCDB] dark:hover:bg-[#DDDCDB]/10 sm:gap-2 sm:px-4 sm:text-base"
-    >
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-4 w-4 shrink-0"
-      >
-        <path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" />
-      </svg>
-      Check my resume
-    </a>
+              <div className="pointer-events-auto flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                {/* Two main buttons: equal width and side by side on phones */}
+                <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">
+                  <a
+                    href="/Souryadeep_Ganguly_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-[#3C4044]/30 px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#3C4044]/10 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/30 dark:text-[#DDDCDB] dark:hover:bg-[#DDDCDB]/10 sm:gap-2 sm:px-4 sm:text-base"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4 w-4 shrink-0"
+                    >
+                      <path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" />
+                    </svg>
+                    Check my resume
+                  </a>
 
-    <Link
-      href="/projects"
-      className="flex items-center justify-center whitespace-nowrap rounded-lg bg-[#FD7B41] px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] sm:px-4 sm:text-base"
-    >
-      See my work
-    </Link>
-  </div>
+                  <Link
+                    href="/projects"
+                    className="flex items-center justify-center whitespace-nowrap rounded-lg bg-[#FD7B41] px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] sm:px-4 sm:text-base"
+                  >
+                    See my work
+                  </Link>
+                </div>
 
-  {/* Third button: full width underneath on phones */}
-  <div className="flex sm:justify-center">
-    <Link
-      href="/about"
-      className="flex w-full items-center justify-center whitespace-nowrap rounded-lg border border-[#3C4044]/25 px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-[transform,background-color,border-color,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[#FD7B41] hover:text-[#FD7B41] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/25 dark:text-[#DDDCDB] dark:hover:border-[#FD7B41] dark:hover:text-[#FD7B41] sm:w-auto sm:px-5 sm:text-base"
-    >
-      Want to know more?
-    </Link>
-  </div>
-</div>
+                {/* Third button: full width underneath on phones */}
+                <div className="flex sm:justify-center">
+                  <Link
+                    href="/about"
+                    className="flex w-full items-center justify-center whitespace-nowrap rounded-lg border border-[#3C4044]/25 px-3 py-2 font-sans text-sm font-semibold text-[#3C4044] transition-[transform,background-color,border-color,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[#FD7B41] hover:text-[#FD7B41] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/25 dark:text-[#DDDCDB] dark:hover:border-[#FD7B41] dark:hover:text-[#FD7B41] sm:w-auto sm:px-5 sm:text-base"
+                  >
+                    Want to know more?
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -211,10 +215,10 @@ export default function Home() {
           <div className="px-[clamp(14px,2vw,64px)]">
             {/* same max width and centring as the card */}
             <div className="mx-auto w-full max-w-[860px]">
-              <h2 className="instrument-serif-regular text-5xl text-[#3C4044] dark:text-[#DDDCDB]">
+              <h2 className="instrument-serif-regular lg:text-5xl text-4xl text-[#3C4044] dark:text-[#DDDCDB]">
                 <Link
                   href="/projects"
-                  className="instrument-serif-regular text-[#3C4044] md:text-5xl dark:text-[#DDDCDB]"
+                  className="instrument-serif-regular text-[#3C4044] dark:text-[#DDDCDB]"
                 >
                   Products
                 </Link>{" "}

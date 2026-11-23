@@ -141,7 +141,7 @@ body{
 }
 .intro {
   font-weight: 400;
-  font-size: clamp(23px, 4vw, 51px);
+ 
   line-height: 1.15; /* was 0.5, which squashed the lines together */
 }
 .intro .line {
