@@ -5,9 +5,8 @@ const columns = [
     title: "Pages",
     links: [
       { label: "Ghar", href: "/" },
-      { label: "What's my experience", href: "/experience" },
+      { label: "Experience", href: "/experience" },
       { label: "About Sourya", href: "/about" },
-      { label: "How to connect?", href: "/contact" },
       { label: "Memories", href: "/gallery" },
     ],
   },
@@ -15,6 +14,7 @@ const columns = [
     title: "Socials",
     links: [
       { label: "GitHub", href: "https://github.com/souryeahdeep", external: true },
+      {label:"Leetcode", href:"https://leetcode.com/u/dp0zbY2vFL/",external:true},
       { label: "LinkedIn", href: "https://www.linkedin.com/in/souryadeep-ganguly-b46054240/", external: true },
       { label: "X", href: "https://x.com/jealous_caesar", external: true },
       { label: "Email", href: "mailto:souryadeep05@gmail.com" },
@@ -58,7 +58,7 @@ export default function Footer() {
                 <p className="font-sans text-sm font-semibold text-[#3C4044] dark:text-[#DDDCDB]">
                   {col.title}
                 </p>
-                <ul className="flex flex-col gap-3">
+                <ul className="flex flex-col gap-1.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <a
@@ -66,7 +66,7 @@ export default function Footer() {
                         {...(link.external
                           ? { target: "_blank", rel: "noopener noreferrer" }
                           : {})}
-                        className="break-words font-sans text-sm text-[#3C4044]/75 transition-colors duration-300 hover:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB]/75 dark:hover:text-[#FD7B41]"
+                        className="wrap-break-word py-1 font-sans text-sm text-[#3C4044]/75 transition-colors duration-300 hover:text-[#FD7B41] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB]/75 dark:hover:text-[#FD7B41]"
                       >
                         {link.label}
                       </a>

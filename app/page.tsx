@@ -16,7 +16,7 @@ import Link from "next/link";
 import { Sunflower } from "next/font/google";
 import { SmoothCursorDemo } from "@/components/smooth-cursor-demo";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
-
+import Image from "next/image";
 const FluxLines = dynamic(() => import("@/components/FluxLines"), {
   ssr: false,
 });
@@ -86,102 +86,90 @@ export default function Home() {
   return (
     <>
       <UseSmoothScroll speed={2} />
-      
-      <div className="min-h-screen bg-[#DDDCDB] font-sans selection:bg-amber-500 dark:bg-[#3C4044]">
+
+      <div className="min-h-screen  instrument-serif-regular bg-[#DDDCDB] font-sans selection:bg-amber-500 dark:bg-[#3C4044]">
         <button
           type="button"
           onClick={toggleTheme}
           className="fixed top-6 right-6 z-50 rounded-full border border-[#3C4044]/20 bg-[#E1D5CB]/70 px-4 py-2 text-sm text-[#3C4044] backdrop-blur-md transition-colors hover:bg-[#E1D5CB] dark:border-[#DDDCDB]/20 dark:bg-[#4C5053]/70 dark:text-[#DDDCDB] dark:hover:bg-[#4C5053]"
           aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
         >
-          {isDark ? <img alt="LIGHT MODE" className="w-5" src="/sun.png"/> : <img alt="MOON MODE" className="w-5" src="/moon.png"/>}
+          {isDark ? (
+            <img alt="LIGHT MODE" className="w-5" src="/sun.png" />
+          ) : (
+            <img alt="MOON MODE" className="w-5" src="/moon.png" />
+          )}
         </button>
-
         {/* HERO */}
         <main
           id="top"
-          className="instrument-serif-regular relative flex min-h-[70svh] flex-col items-center justify-center gap-6 px-6 pb-10 pt-14 text-center"
+          className="relative px-[clamp(14px,4vw,64px)] pb-8 pt-12"
         >
-          {/* Background: fills the hero and fades out at the bottom */}
-          {!reduceMotion && (
+          {/* Same 860px column as every other section */}
+          <div className="pointer-events-none relative z-10 mx-auto flex w-full max-w-[860px] flex-col gap-8 text-left">
             <div
-              aria-hidden="true"
-              className="absolute inset-0 z-0 overflow-hidden [-webkit-mask-image:linear-gradient(to_bottom,black_65%,transparent)] [mask-image:linear-gradient(to_bottom,black_65%,transparent)]"
+              className="fade-up pointer-events-auto w-full max-w-full overflow-hidden rounded-3xl border border-[#3C4044]/15 dark:border-[#DDDCDB]/15"
+              style={{ animationDelay: "0ms" }}
             >
-              <MoltenMetal
-                colors={["#9a3412", "#fb923c"]}
-                coreColor="#FFFFFF"
-                speed={0.35}
-                scale={4}
-                detail={3}
-                glow={1.6}
-                thickness={1}
-                haze={0.75}
-                mouseInteraction
-                flareOnClick
-                lightMode={false}
-                swirl={1}
-                turbulence={0.2}
-                brightness={1.3}
-                colorMode="molten"
-                rotation={0}
-                offsetX={0}
-                offsetY={0}
-                grain={0.05}
-                opacity={1}
-                drift={0.3}
-                intro
-                mouseStrength={0.5}
-                paused={false}
-                style={undefined}
+              <img
+                src="/icegif-514.gif"
+                alt="Describe the GIF here"
+                className="block h-[325px] w-full"
               />
             </div>
-          )}
+            <h1 className="relative intro text-5xl z-10 text-[#FD7B41]">
+              Heyya!! I&apos;m Souryadeep.
+              <p className="italic text-[1.5rem] font-stretch-90% text-[#3C4044] dark:text-[#DDDCDB] pt-2">
+                your friendly distant backend dev.
+              </p>
+            </h1>
 
-          {/* Title only. The subtitle lives outside the h1 so it keeps its own size and spacing. */}
-          <h1
-            className="intro pointer-events-none relative z-10 text-[#FD7B41]"
-            aria-label={`${LINE_1} ${LINE_2}`}
-          >
-            <span className="line">
-              <Letters text={LINE_1} start={0} />
-            </span>
-            <span className="line name">
-              <Letters text={LINE_2} start={Array.from(LINE_1).length} />
-            </span>
-          </h1>
+            <div className="fade-up flex flex-col gap-8">
+              <p className="max-w-full font-normal  text-2xl leading-8 text-[#DDDCDB]/85 text-[#3C4044]/80 dark:text-[#DDDCDB]/80 md:text-2xl md:leading-9">
+                I build the APIs, databases and services behind products.{" "}
+                <span className="whitespace-nowrap">1+ years</span> of building
+                systems with{" "}
+                <span className="mx-1 inline-block whitespace-nowrap py-1">
+                  <AnnotatedText variant="box" delay={0.56}>
+                    Spring Framework
+                  </AnnotatedText>
+                  .
+                </span>{" "}
+                Adapting to a new technology is always fun and challenging.
+              </p>
 
-          <div
-            className="fade-up pointer-events-none relative z-10 flex max-w-[680px] flex-col items-center gap-6"
-            style={{ animationDelay: `${SUBTITLE_DELAY_MS}ms` }}
-          >
-            <p className="text-lg leading-7 text-[#3C4044]/75 md:text-2xl md:leading-8 dark:text-[#DDDCDB]/75">
-              I build the APIs, databases and services behind products.
-              <br />
-              1+ years building systems with{" "}
-              <AnnotatedText variant="box" delay={0.56}>
-                Spring Framework
-              </AnnotatedText>
-              .
-            </p>
+              {/* Tag on the left, buttons on the right */}
+              <div className="pointer-events-auto flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg border border-[#3C4044]/30 px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#3C4044]/10 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/30 dark:text-[#DDDCDB] dark:hover:bg-[#DDDCDB]/10"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-4 w-4"
+                    >
+                      <path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" />
+                    </svg>
+                    Check my resume
+                  </a>
 
-            {/* Buttons need to be clickable again, so re-enable the mouse here */}
-            <div className="pointer-events-auto flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="#work"
-                className="rounded-lg bg-[#FD7B41] px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
-              >
-                See my work
-              </a>
-
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-[#3C4044]/30 px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-[transform,background-color] duration-300 hover:-translate-y-0.5 hover:bg-[#3C4044]/10 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/30 dark:text-[#DDDCDB] dark:hover:bg-[#DDDCDB]/10"
-              >
-                Check my resume
-              </a>
+                  <a
+                    href="#work"
+                    className="rounded-lg bg-[#FD7B41] px-4 py-2 font-sans text-base font-semibold text-[#3C4044] transition-transform duration-300 hover:-translate-y-0.5 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41]"
+                  >
+                    See my work
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -199,14 +187,9 @@ export default function Home() {
               <h2 className="instrument-serif-regular text-5xl text-[#3C4044] dark:text-[#DDDCDB]">
                 <Link
                   href="/projects"
-                  className="instrument-serif-regular text-[#3C4044] dark:text-[#DDDCDB]"
+                  className="instrument-serif-regular text-[#3C4044] md:text-5xl dark:text-[#DDDCDB]"
                 >
-                  <Tooltip
-                    containerClassName=""
-                    content="Click for more products"
-                  >
-                    Products
-                  </Tooltip>{" "}
+                  Products
                 </Link>{" "}
                 I have developed
               </h2>

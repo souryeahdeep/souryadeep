@@ -30,15 +30,9 @@ export default function About() {
         >
           <Link
             href="/about"
-            className="inline-block rounded-lg instrument-serif-regular text-5xl text-[#3C4044] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB] md:text-6xl"
+            className="inline-block rounded-lg instrument-serif-regular text-2xl text-[#3C4044] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FD7B41] dark:text-[#DDDCDB] md:text-5xl"
           >
-            {canHover ? (
-              <Tooltip containerClassName="" content="Click to know more!!">
-                {title}
-              </Tooltip>
-            ) : (
-              title
-            )}
+            {title}
           </Link>
 
           <div className="mt-6 flex flex-col gap-4 font-sans text-base leading-7 text-[#3C4044]/75 dark:text-[#DDDCDB]/75 md:text-lg md:leading-8">
@@ -47,7 +41,7 @@ export default function About() {
               {
                 "Third year B.Tech student who mostly focuses on building scalable high available architecture"
               }{" "}
-              Currently looking for full time internship oppurtunity, learning
+              Currently looking for full   time internship oppurtunity, learning
               System Design, practising DSA, getting comfortable with AI Agents.
               <br />
               Any query for my site or project? Feel free to contact me by{" "}
@@ -68,6 +62,14 @@ export default function About() {
               </a>
               .{" "}
             </p>
+          </div>
+          <div className="mt-5 flex justify-center">
+            <Link
+              href="/about"
+              className="rounded-lg border border-[#3C4044]/25 px-5 py-2 font-sans text-base font-semibold text-[#3C4044] transition-[transform,background-color,border-color,color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[#FD7B41] hover:text-[#FD7B41] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FD7B41] dark:border-[#DDDCDB]/25 dark:text-[#DDDCDB] dark:hover:border-[#FD7B41] dark:hover:text-[#FD7B41]"
+            >
+              Want to know more?
+            </Link>
           </div>
         </motion.div>
       </div>
